@@ -13,7 +13,7 @@
 defined('_JEXEC') or die;
 
 // Load the helper file (only once)
-require_once(dirname(__FILE__) . DS . 'helper.php');
+require_once(dirname(__FILE__) . '/helper.php');
 
 class plgContentHelloWorld extends JPlugin
 {
