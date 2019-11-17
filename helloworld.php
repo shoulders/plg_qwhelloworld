@@ -12,7 +12,7 @@
 // No direct access
 defined('_JEXEC') or die;
 
-// Load the helper file
+// Load the helper file (only once)
 require_once(dirname(__FILE__) . DS . 'helper.php');
 
 class plgContentHelloWorld extends JPlugin
