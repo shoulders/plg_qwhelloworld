@@ -58,4 +58,23 @@ class plgContentHelloWorld extends JPlugin
 		
 		return true;
 	}
+	
+	/**
+	 * Render The Template (Not currently used)
+	 * 
+	 * Based on onInstallerAddInstallationTab() from webinstaller.
+	 *
+	 * @return  variable  Returns an varible with the rendered template
+	 *
+	 * @since   1.0
+	 */
+	public function renderTemplate()
+	{
+		// Render the input
+		ob_start();
+		include PluginHelper::getLayoutPath('content', 'helloworld', 'default');
+		$content = ob_get_clean();
+
+		return $content;
+	}
 }
