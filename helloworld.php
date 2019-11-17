@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 // Load the helper file
 require_once(dirname(__FILE__) . DS . 'helper.php');
 
-class plgContentHelloworld extends JPlugin
+class plgContentHelloWorld extends JPlugin
 {
 	/**
 	 * Load the language file on instantiation. Note this is only available in Joomla 3.1 and higher.

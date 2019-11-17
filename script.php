@@ -17,7 +17,7 @@ defined('_JEXEC') or die;
  
 //D:\websites\htdocs\quantumwarp.com\plugins\content\arsdlid\arsdlid.xml
 
-class PlgHelloworldInstallerScript
+class plgContentHelloWorldInstallerScript
 {
 	/**
      * This method is called after a plugin is installed.
@@ -28,7 +28,7 @@ class PlgHelloworldInstallerScript
      */
 	function install($parent) 
 	{
-		echo '<p>' . JText::_('PLG_HELLOWORLD_INSTALL_TEXT') . '</p>';
+		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_INSTALL_TEXT') . '</p>';
 		//$parent->getParent()->setRedirectURL('index.php?option=mod_helloworld');
 	}
  
@@ -41,7 +41,7 @@ class PlgHelloworldInstallerScript
      */
 	function uninstall($parent) 
 	{
-		echo '<p>' . JText::_('PLG_HELLOWORLD_UNINSTALL_TEXT') . '</p>';
+		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_UNINSTALL_TEXT') . '</p>';
 	}
  
 	/**
@@ -53,7 +53,7 @@ class PlgHelloworldInstallerScript
      */
 	function update($parent) 
 	{		
-		echo '<p>' . JText::sprintf('PLG_HELLOWORLD_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
+		echo '<p>' . JText::sprintf('PLG_CONTENT_HELLOWORLD_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
 	}
  
 	/**
@@ -70,7 +70,7 @@ class PlgHelloworldInstallerScript
      */
 	function preflight($type, $parent) 
 	{
-		echo '<p>' . JText::_('PLG_HELLOWORLD_PREFLIGHT_' . $type . '_TEXT') . '</p>';
+		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_PREFLIGHT_' . $type . '_TEXT') . '</p>';
 	}
  
 	/**
@@ -86,6 +86,6 @@ class PlgHelloworldInstallerScript
      */
 	function postflight($type, $parent) 
 	{
-		echo '<p>' . JText::_('PLG_HELLOWORLD_POSTFLIGHT_' . $type . '_TEXT') . '</p>';
+		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_POSTFLIGHT_' . $type . '_TEXT') . '</p>';
 	}
 }
