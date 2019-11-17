@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" version="3.0" client="site" method="upgrade">
+	
+	<!-- Meta Data -->
+	<name>PLG_CONTENT_HELLOWORLD_NAME</name>
+	<creationDate>2019-11-17</creationDate>
+	<author>QuantumWarp</author>
+	<authorEmail>no-reply@quantumwarp.com</authorEmail>
+	<authorUrl>quantumwarp.com</authorUrl>
+	<copyright>Copyright (C) 2019 QuantumWarp. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_HELLOWORLD_DESCRIPTION</description>	
+	<namespace>QuantumWarp\Module\plg_helloworld</namespace><!-- Joomla 4.0 only -->
+	<!--<element>Content chicken</element>--><!-- The internal name of the component. If omitted, name will be cleaned and used --><!-- not sure this is used -->
+	<infourl>https://quantumwarp.com/software/plg_helloworld</infourl> <!-- might be only for update server -->
+	<changelogurl>https://quantumwarp.com/updates/plg_helloworld/changelog.xml</changelogurl><!-- Joomla 4.0 only -->	
+	<dlid prefix="dlid=" suffix="&amp;dummy=my.zip"/><!-- Joomla 4.0 only -->	
+	<!--<help key="JHELP_EXTENSIONS_MODULE_MANAGER_SEARCH" />--> <!-- This create a help button to Joomla Official documentation - https://help.joomla.org/proxy?keyref=Help39:Extensions_Module_Manager_Search&lang=en -->
+
+	<!-- install/update/uninstall Script -->
+	<scriptfile>script.php</scriptfile>
+	
+	<!-- Front-end Files -->	
+	<files>		
+		<folder>language</folder><!-- Languages (New Method) -->
+		<folder>sql</folder>
+		<folder>language</folder>
+		<filename plugin="helloworld">helloworld.php</filename><!-- Make sure this is set right -->
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>		
+		<filename>helloworld.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>		
+	</files>
+	<files folder="from-folder">
+		<folder>examples</folder>
+		<filename>example.php</filename>		
+	</files>
+	
+	<!-- Fileset definition - not sure what this is for -->
+	<fileset></fileset>
+	
+	<!-- Media Files -->
+	<media folder="media" destination="plg_helloworld">
+		<filename>helloworld_logo.png</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+		
+	<!-- Languages (Old Method - Might not be needed) -->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_helloworld.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_helloworld.sys.ini</language><!-- plg_helloworld.sys.ini no longer needed here? -->
+	</languages>
+	
+	<!-- Configuration -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="shortcode"
+					type="text"
+					default="helloworld"
+					label="PLG_CONTENT_HELLOWORLD_SHORTCODE_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_SHORTCODE_DESC"
+					maxlength="15"
+					size="15"
+				/>
+				
+				<field
+					name="content"
+					type="editor"
+					default="HelloWorld"
+					label="PLG_CONTENT_HELLOWORLD_CONTENT_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_CONTENT_DESC"					
+				/>
+				
+				<field
+					name="lang"
+					type="sql"
+					default="1"
+					label="PLG_HELLOWORLD_SELECT_LANGUAGE_LABEL"
+					description="PLG_HELLOWORLD_SELECT_LANGUAGE_DESC"
+					query="SELECT id AS value, lang FROM #__plg_helloworld"
+				/>			
+			</fieldset>
+			<fieldset name="advanced">				
+				<field
+					name="date"
+					type="calendar"					
+					label="PLG_CONTENT_HELLOWORLD_DATE_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_DATE_DESC"					
+				/>				
+			</fieldset>
+		</fields>
+	</config>
+	
+	<!-- Install and Upgrade -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+			<file driver="sqlazure" charset="utf8">sql/sqlazure/install.sqlazure.utf8.sql</file>			 
+		</sql>
+	</install>	 
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+			<file driver="sqlazure" charset="utf8">sql/sqlazure/uninstall.sqlazure.utf8.sql</file>		 
+		</sql>
+	</uninstall>	 
+	<update> 
+		<schemas>
+			<schemapath type="mysql">sql/mysql/updates</schemapath>
+			<schemapath type="sqlazure">sql/sqlazure/updates</schemapath>
+		</schemas> 
+	</update>	
+		
+	<!-- Update Server -->		
+	<updateservers>
+		<server type="extension" priority="1" name="Hello World Plugin - Update Site">https://quantumwarp.com/updates/plg_helloworld/update.xml</server>
+	</updateservers>
+	
+</extension>
