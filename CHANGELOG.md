@@ -7,6 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 Please report any bugs or features that you find so that they can be fixed.
 To get more details visit https://quantumwarp.com/
 
-## [1.0.0] - 2019-11-01
+## [1.0.0] - 2019-11-17
 ### Initial Release
 - Initial Commit

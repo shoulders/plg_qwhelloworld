@@ -1,4 +1,4 @@
-# HelloWorld Plugin for Joomla
+# Hello World Plugin for Joomla
 
 This is a ready to go Joomla plugin template that you can use to build your own plugins. I have added all the settings, elements and things I could find.
 
