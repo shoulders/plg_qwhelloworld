@@ -1,29 +1,29 @@
-# Hello World Plugin for Joomla
+# Hello World Plugin for Joomla!
 
 This is a ready to go Joomla plugin template that you can use to build your own plugins. I have added all the settings, elements and things I could find.
 
-## WHAT DOES IT DO?
+## What does it do?
 This is a content plugin that replaces a user defined shortcode with some content; date, WYSIWYG content and a language sensitive Hello World statement.
 
-## HOW TO USE THE PLUGIN
+## How to use this module
 - install the plugin.
 - configure the plugin how you want it.
 - insert your shortcode into an article.
 - load the newly saved article and you should see the shortcode has been replaced with the content you configured in the plugin admin.
 
-## NOTES
+## Notes
 - You can restrict this plugin to work only on certain components using $context.
 
-## COMPATIBILITY
+## Compatibility
 plg_helloworld is fully compatible with Joomla versions 3.x (possibly 3.8+) and 4.x. A few alterations and the plugin  will work on earlier versions of Joomla.
 
-## LICENSE
+## License
 plg_helloworld is a Joomla module developed by QuantumWarp and released under the GNU General Public License.
 
-## LEARN MORE
+## Learn More
 Visit the extension's software page at: https://quantumwarp.com/
 
-## REFERENCES
+## References
 I used the following links and resources to build this plugin.
 - https://quantumwarp.com/kb/articles/106-extension-development/671-creating-a-joomla-plugin
 - https://docs.joomla.org/J3.x:Creating_a_Plugin_for_Joomla
