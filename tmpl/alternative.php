@@ -19,7 +19,7 @@
 defined('_JEXEC') or die; ?>
 
 <div class="<?php echo $this->_name ?>">
-	<p><strong><?php echo JText::_('PLG_HELLOWORLD_DEFAULT_TMPL_MSG'); ?></strong></p>
+	<p><strong><?php echo JText::_('PLG_HELLOWORLD_ALTERNATIVE_TMPL_MSG'); ?></strong></p>
 	<p><?php echo JText::_('PLG_HELLOWORLD_HEADING_MSG'); ?></p>
 	<?php if ($this->params->get('showMessage')) : ?>
 		<p style="<?php echo $messageStyling ?>"><?php echo $helloWorldMessage; ?></p>

@@ -10,17 +10,17 @@
  * @license   GNU/GPLv3 or later; https://www.gnu.org/licenses/gpl.html
  */
  
-class plgHelloWorldHelper
+class PlgContentHelloWorldHelper
 {
-    /**
-     * Retrieves the hello message
-     *
-     * @param   array  $params An object containing the module parameters
-     *
-     * @access public
-     */    
-    public static function getHello($params)
-    {
+	/**
+	 * Retrieves the hello message
+	 *
+	 * @param   array  $params An object containing the module parameters
+	 *
+	 * @access public
+	 */    
+	public static function getHello($params)
+	{
 		// Obtain a database connection
 		$db = JFactory::getDbo();
 		
@@ -38,7 +38,7 @@ class plgHelloWorldHelper
 		
 		// Return the Hello
 		return $result;
-    }
+	}
 }
 
 

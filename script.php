@@ -15,17 +15,18 @@ defined('_JEXEC') or die('Restricted access');
 // No direct access to this file
 defined('_JEXEC') or die;
  
-//D:\websites\htdocs\quantumwarp.com\plugins\content\arsdlid\arsdlid.xml
-
+/*
+ * class name of: plgContentHelloWorldInstallerScript (original) PlgContentHelloWorldInstallerScript = All work
+ */
 class plgContentHelloWorldInstallerScript
 {
 	/**
-     * This method is called after a plugin is installed.
-     *
-     * @param  \stdClass $parent - Parent object calling this method.
-     *
-     * @return void
-     */
+	 * This method is called after a plugin is installed.
+	 *
+	 * @param  \stdClass $parent - Parent object calling this method.
+	 *
+	 * @return void
+	 */
 	function install($parent) 
 	{
 		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_INSTALL_TEXT') . '</p>';
@@ -33,24 +34,24 @@ class plgContentHelloWorldInstallerScript
 	}
  
 	/**
-     * This method is called after a plugin is uninstalled.
-     *
-     * @param  \stdClass $parent - Parent object calling this method.
-     *
-     * @return void
-     */
+	* This method is called after a plugin is uninstalled.
+	*
+	* @param  \stdClass $parent - Parent object calling this method.
+	*
+	* @return void
+	*/
 	function uninstall($parent) 
 	{
 		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_UNINSTALL_TEXT') . '</p>';
 	}
  
 	/**
-     * This method is called after a plugin is updated.
-     *
-     * @param  \stdClass $parent - Parent object calling object.
-     *
-     * @return void
-     */
+	* This method is called after a plugin is updated.
+	*
+	* @param  \stdClass $parent - Parent object calling object.
+	*
+	* @return void
+	*/
 	function update($parent) 
 	{		
 		echo '<p>' . JText::sprintf('PLG_CONTENT_HELLOWORLD_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
@@ -74,16 +75,16 @@ class plgContentHelloWorldInstallerScript
 	}
  
 	/**
-     * Runs right after any installation action is performed on the plugin. (install/update/uninstall method)
-     *
-     * @param  string    $type   - Type of PostFlight action. Possible values are:
-     *                           - * install
-     *                           - * update
-     *                           - * discover_install
-     * @param  \stdClass $parent - Parent object calling object.
-     *
-     * @return void
-     */
+	* Runs right after any installation action is performed on the plugin. (install/update/uninstall method)
+	*
+	* @param  string    $type   - Type of PostFlight action. Possible values are:
+	*                           - * install
+	*                           - * update
+	*                           - * discover_install
+	* @param  \stdClass $parent - Parent object calling object.
+	*
+	* @return void
+	*/
 	function postflight($type, $parent) 
 	{
 		echo '<p>' . JText::_('PLG_CONTENT_HELLOWORLD_POSTFLIGHT_' . $type . '_TEXT') . '</p>';
