@@ -1,14 +1,8 @@
 <?php
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
-
 /**
- * Script file of HelloWorld Plugin.
- *
- * @package   HelloWorld Plugin for Joomla!
+ * @package   Hello World Plugin for Joomla!
  * @author    Jon Brown https://quantumwarp.com/
  * @copyright Copyright (C) 2019 Jon Brown, All rights reserved.
- * @copyright Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license   GNU/GPLv3 or later; https://www.gnu.org/licenses/gpl.html
  */
 

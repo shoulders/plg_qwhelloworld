@@ -1,12 +1,8 @@
 <?php
-/*
- * Helper class for HelloWorld module
- * 
- * @package   HelloWorld Plugin for Joomla! 3.x
- * @link https://docs.joomla.org/J3.x:Creating_a_simple_module/Developing_a_Basic_Module
+/**
+ * @package   Hello World Plugin for Joomla!
  * @author    Jon Brown https://quantumwarp.com/
  * @copyright Copyright (C) 2019 Jon Brown, All rights reserved.
- * @copyright Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license   GNU/GPLv3 or later; https://www.gnu.org/licenses/gpl.html
  */
  

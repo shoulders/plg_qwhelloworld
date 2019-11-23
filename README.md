@@ -1,21 +1,25 @@
 # Hello World Plugin for Joomla!
 
-This is a ready to go Joomla plugin template that you can use to build your own plugins. I have added all the settings, elements and things I could find.
+This is a ready to go Joomla Plugin Boilerplate that you can use to build your own plugins. I have added all the settings, elements and things I could find.
 
 ## What does it do?
-This is a content plugin that replaces a user defined shortcode with some content; date, WYSIWYG content and a language sensitive Hello World statement.
+This is a content plugin that replaces a user defined shortcode with a language sensitive Hello World statement. You can set the language in the plugin.
 
 ## How to use this module
-- install the plugin.
-- configure the plugin how you want it.
-- insert your shortcode into an article.
-- load the newly saved article and you should see the shortcode has been replaced with the content you configured in the plugin admin.
+- Install the plugin.
+- Configure the plugin how you want it, including making sure it is published.
+- Insert the shortcode into an article.
+- Load the newly saved article, with the shortcode, and you should see the shortcode has been replaced with the Hello World message..
 
 ## Notes
-- You can restrict this plugin to work only on certain components using $context.
+- When the install mechanism is used, the title for the plugin comes from **en-GB.plg_qwrealurl.sys.ini / PLG_QWREALURL_NAME="Hello World"**
+- The plugin name is **helloworld**
+  - Can be called by **$this->_name**
+  - Is made from the filename **helloworld.php**, the **.php** file extension is removed.
+- You can restrict this plugin to work only on certain components using **$context.**
 
 ## Compatibility
-plg_helloworld is fully compatible with Joomla versions 3.x (possibly 3.8+) and 4.x. A few alterations and the plugin  will work on earlier versions of Joomla.
+plg_helloworld is fully compatible with Joomla versions 3.x (possibly only 3.8+) and 4.x. A few alterations and the plugin will work on earlier versions of Joomla.
 
 ## License
 plg_helloworld is a Joomla module developed by QuantumWarp and released under the GNU General Public License.

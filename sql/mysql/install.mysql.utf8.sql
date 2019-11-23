@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `#__plg_helloworld` (
 	`language` varchar(25) NOT NULL,
  
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
  
 INSERT INTO `#__plg_helloworld` (`hello`, `language`) VALUES ('Hello World', 'en-GB');
 INSERT INTO `#__plg_helloworld` (`hello`, `language`) VALUES ('Hola Mundo', 'es-ES');

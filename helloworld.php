@@ -1,11 +1,8 @@
 <?php
-/*
- * HelloWorld Module Entry Point
- * 
- * @package   HelloWorld Plugin for Joomla! 3.x
+/**
+ * @package   Hello World Plugin for Joomla!
  * @author    Jon Brown https://quantumwarp.com/
  * @copyright Copyright (C) 2019 Jon Brown, All rights reserved.
- * @copyright Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
  * @license   GNU/GPLv3 or later; https://www.gnu.org/licenses/gpl.html
  */
  
@@ -30,8 +27,8 @@ class PlgContentHelloWorld extends JPlugin
 	public function onAfterDispatch()
     {
         // Add CSS and JS to the <head> - This method allows overriding (was originally in onContentPrepare())
-		JHtml::stylesheet('plg_helloworld/helloworld.css', array(), true);
-		JHtml::script('plg_helloworld/helloworld.js', false, true);
+		JHtml::stylesheet('plg_'.$this->_name.'/helloworld.css', array(), true);
+		JHtml::script('plg_'.$this->_name.'/helloworld.js', false, true);
     }
 
 	/**
@@ -100,10 +97,13 @@ class PlgContentHelloWorld extends JPlugin
 		// Get page html which includes full page
         $body = $this->app->getBody();
         $content = "<h1>Hello World</h1>";
-        // locate </body> tag and insert our own content right before </body>
+
+        // Locate </body> tag and insert our own content right before </body>
         $body = str_replace('</body>', $content . '</body>', $body );
-        // set the body
-        $this->app->setBody($body);*/
+
+        // Set the body
+        $this->app->setBody($body);
+		 */
 	}
 
 }

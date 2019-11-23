@@ -62,7 +62,8 @@
 					description="PLG_CONTENT_HELLOWORLD_SHORTCODE_DESC"
 					maxlength="15"
 					size="15"
-				/>				
+				/>	
+							
 				<field
 					name="useTemplate"
 					type="radio"
