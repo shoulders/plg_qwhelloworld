@@ -7,7 +7,7 @@ This is a content plugin that replaces a user defined shortcode with a language 
 
 ## How to use this module
 - Install the plugin.
-- Configure the plugin how you want it, including making sure it is published.
+- Configure the plugin how you want it, including making sure to publish it.
 - Insert the shortcode into an article.
 - Load the newly saved article, with the shortcode, and you should see the shortcode has been replaced with the Hello World message..
 
