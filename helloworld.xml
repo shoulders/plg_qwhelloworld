@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="content" version="3.0" client="site" method="upgrade">
+<extension type="plugin" version="3.0" method="upgrade" group="content">
 	
 	<!-- Meta Data -->
 	<name>PLG_CONTENT_HELLOWORLD_NAME</name><!-- Translating this is optional -->
