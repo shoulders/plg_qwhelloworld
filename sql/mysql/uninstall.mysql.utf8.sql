@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__plg_helloworld`
+DROP TABLE IF EXISTS `#__plg_content_helloworld`

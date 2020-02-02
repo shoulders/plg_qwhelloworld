@@ -22,10 +22,10 @@ This is a content plugin that replaces a user defined shortcode with a language 
 plg_helloworld is fully compatible with Joomla versions 3.x (possibly only 3.8+) and 4.x. A few alterations and the plugin will work on earlier versions of Joomla.
 
 ## License
-plg_helloworld is a Joomla module developed by QuantumWarp and released under the GNU General Public License.
+plg_helloworld is a Joomla plugin developed by QuantumWarp and released under the GNU General Public License.
 
 ## Learn More
-Visit the extension's software page at: https://quantumwarp.com/
+Visit the extension's software page at: https://quantumwarp.com/projects/joomla/plg-helloworld
 
 ## References
 I used the following links and resources to build this plugin.

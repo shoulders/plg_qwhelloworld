@@ -11,8 +11,8 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.0.0</version>
 	<description>PLG_CONTENT_HELLOWORLD_DESCRIPTION</description><!-- Translating this is optional -->
-	<namespace>QuantumWarp\Module\plg_helloworld</namespace><!-- Joomla 4.0 only -->	
-	<changelogurl>https://quantumwarp.com/updates/plg_helloworld/changelog.xml</changelogurl><!-- Joomla 4.0 only -->	
+	<namespace>QuantumWarp\Plugin\Content\HelloWorld</namespace><!-- Joomla 4.0 only -->	
+	<changelogurl>https://quantumwarp.com/updates/plg_content_helloworld/changelog.xml</changelogurl><!-- Joomla 4.0 only -->	
 	<dlid prefix="dlid=" suffix="&amp;dummy=my.zip"/><!-- Joomla 4.0 only -->	
 	<!--<help key="JHELP_EXTENSIONS_MODULE_MANAGER_SEARCH" />--> <!-- This create a help button to Joomla Official documentation - https://help.joomla.org/proxy?keyref=Help39:Extensions_Module_Manager_Search&lang=en -->
 
@@ -38,7 +38,7 @@
 	</files>	
 	
 	<!-- Media Files -->
-	<media folder="media" destination="plg_helloworld">
+	<media folder="media" destination="plg_content_helloworld">
 		<filename>helloworld_logo.png</filename>
 		<folder>css</folder>
 		<folder>js</folder>
@@ -47,7 +47,7 @@
 	<!-- Languages (Old Method - Might not be needed) -->
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.plg_content_helloworld.ini</language>
-		<language tag="en-GB">en-GB/en-GB.plg_content_helloworld.sys.ini</language><!-- plg_helloworld.sys.ini no longer needed here? -->
+		<language tag="en-GB">en-GB/en-GB.plg_content_helloworld.sys.ini</language><!-- plg_content_helloworld.sys.ini no longer needed here? -->
 	</languages>
 	
 	<!-- Configuration -->
@@ -67,8 +67,8 @@
 				<field
 					name="useTemplate"
 					type="radio"
-					label="PLG_HELLOWORLD_USETEMPLATE_LABEL"
-					description="PLG_HELLOWORLD_USETEMPLATE_DESC"
+					label="PLG_CONTENT_HELLOWORLD_USETEMPLATE_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_USETEMPLATE_DESC"
 					class="btn-group btn-group-yesno"
 					default="0"					
 					>
@@ -79,8 +79,8 @@
 				<field
 					name="showMessage"
 					type="radio"
-					label="PLG_HELLOWORLD_SHOWMESSAGE_LABEL"
-					description="PLG_HELLOWORLD_SHOWMESSAGE_DESC"
+					label="PLG_CONTENT_HELLOWORLD_SHOWMESSAGE_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_SHOWMESSAGE_DESC"
 					class="btn-group btn-group-yesno"
 					default="1"					
 					>
@@ -92,17 +92,17 @@
 					name="language"
 					type="sql"
 					default="1"
-					label="PLG_HELLOWORLD_SELECT_LANGUAGE_LABEL"
-					description="PLG_HELLOWORLD_SELECT_LANGUAGE_DESC"
-					query="SELECT id AS value, language FROM #__plg_helloworld"
+					label="PLG_CONTENT_HELLOWORLD_SELECT_LANGUAGE_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_SELECT_LANGUAGE_DESC"
+					query="SELECT id AS value, language FROM #__plg_content_helloworld"
 				/>			
 			</fieldset>
 			<fieldset name="advanced">
 				<field
 					name="underlineMessage"
 					type="radio"
-					label="MOD_HELLOWORLD_UNDERLINEMESSAGE_LABEL"
-					description="MOD_HELLOWORLD_UNDERLINEMESSAGE_DESC"
+					label="PLG_CONTENT_HELLOWORLD_UNDERLINEMESSAGE_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_UNDERLINEMESSAGE_DESC"
 					class="btn-group btn-group-yesno"
 					default="1"					
 					>
@@ -114,8 +114,8 @@
 					name="layout"
 					type="filelist"					
 					default="default.php"
-					label="PLG_HELLOWORLD_LAYOUT_LABEL"
-					description="PLG_HELLOWORLD_LAYOUT_DESC"
+					label="PLG_CONTENT_HELLOWORLD_LAYOUT_LABEL"
+					description="PLG_CONTENT_HELLOWORLD_LAYOUT_DESC"
 					directory="plugins/content/helloworld/tmpl"
 					filter=""
 					exclude="\.html$"
@@ -149,7 +149,7 @@
 		
 	<!-- Update Server -->		
 	<updateservers>
-		<server type="extension" priority="1" name="Hello World Plugin - Update Site">https://quantumwarp.com/updates/joomla/plg_helloworld/update.xml</server>
+		<server type="extension" priority="1" name="plg_content_helloworld (Plugin)">https://quantumwarp.com/updates/joomla/plg_content_helloworld/update.xml</server>
 	</updateservers>
 	
 </extension>

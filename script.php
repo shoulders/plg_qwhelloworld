@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 /*
  * class name of: plgContentHelloWorldInstallerScript (original) PlgContentHelloWorldInstallerScript = All work
  */
-class plgContentHelloWorldInstallerScript
+class PlgContentHelloWorldInstallerScript
 {
 	/**
 	 * This method is called after a plugin is installed.

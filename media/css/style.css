@@ -4,3 +4,35 @@
  * @copyright Copyright (C) 2019 Jon Brown, All rights reserved.
  * @license   GNU/GPLv3 or later; https://www.gnu.org/licenses/gpl.html
  */
+
+/* -- General -- */
+
+.plg_content_helloworld {
+	padding: 10px;
+	border: 2px solid #4db2b3;
+	border-radius: 5px;
+}
+
+/* -- Default Layout -- */
+
+.plg_content_helloworld.default p.template_msg {
+	border: 2px dotted #4db2b3;
+	border-radius: 5px;
+}
+
+.plg_content_helloworld.default p.heading_msg {
+	border: 2px dashed #4db2b3;
+	border-radius: 5px;
+}
+
+/* -- Alternative Layout -- */
+
+.plg_content_helloworld.alternative p.template_msg {
+	border: 2px dotted blue;
+	border-radius: 5px;
+}
+
+.plg_content_helloworld.alternative p.heading_msg {
+	border: 2px dashed blue;
+	border-radius: 5px;
+}

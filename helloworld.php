@@ -11,7 +11,9 @@ defined('_JEXEC') or die;
 
 // Load the helper file (only once)
 // require_once dirname(__FILE__) . '/helper.php'; // works - An older way of doing things
-JLoader::register('PlgContentHelloWorldHelper', __DIR__ . '/helper.php'); // better - This uses the Joomla autoload feature
+
+// Load the helper file via Joomla's Autoload feature
+JLoader::register('PlgContentHelloWorldHelper', __DIR__ . '/helper.php');
 
 class PlgContentHelloWorld extends JPlugin
 {
@@ -24,11 +26,26 @@ class PlgContentHelloWorld extends JPlugin
 	 */
 	protected $autoloadLanguage = true;
 	
+    /**
+	 * Class Constructor
+     * 
+	 * @access public
+     * 
+     * Not currently used.
+	 *  
+    public function __construct($subject, $config)
+    {   
+        // Require when using a constructor in this class
+		parent::__construct($subject, $config);
+    }*/	
+	
 	public function onAfterDispatch()
     {
-        // Add CSS and JS to the <head> - This method allows overriding (was originally in onContentPrepare())
-		JHtml::stylesheet('plg_'.$this->_name.'/helloworld.css', array(), true);
-		JHtml::script('plg_'.$this->_name.'/helloworld.js', false, true);
+        // Add CSS and JS to the <head> - This method allows overriding (was originally in onContentPrepare()) -  is this the best place
+		JHtml::stylesheet('plg_content_'.$this->_name.'/style.css', array(), true);
+		JHtml::script('plg_content_'.$this->_name.'/javascript.js', false, true);
+		JHtml::stylesheet('plg_content_'.$this->_name.'/helloworld.css', array(), true);
+		JHtml::script('plg_content_'.$this->_name.'/helloworld.js', false, true);
     }
 
 	/**
@@ -75,11 +92,18 @@ class PlgContentHelloWorld extends JPlugin
 		// Standard method for generating content
 		} else {
 			
-			$newCode = "\n".'<div class="'.$this->_name.'">'."\n";			
-			$newCode .= '<p><strong>'.JText::_('PLG_HELLOWORLD_NOTUSING_TMPL_MSG').'</strong></p>'."\n";
-	        $newCode .= '<p>'.JText::_('PLG_HELLOWORLD_HEADING_MSG').'</p>'."\n";
-			if ($this->params->get('showMessage')) { $newCode .= '<p style="'.$messageStyling.'">'.$helloWorldMessage.'</p>'."\n"; }
+			$newCode = "\n".'<div class="'.'plg_content_'.$this->_name.'">'."\n";			
+			$newCode .= '<p><strong>'.JText::_('PLG_CONTENT_HELLOWORLD_NOTUSING_TEMPLATE_MSG').'</strong></p>'."\n";
+	        $newCode .= '<p>'.JText::_('PLG_CONTENT_HELLOWORLD_HEADING_MSG').'</p>'."\n";
+			if ($this->params->get('showMessage')) { $newCode .= '<p style="'.$messageStyling.'">'.$helloWorldMessage.'</p>'."\n"; }			
+			$newCode .= '<div class="browser-message"></div>'."\n";
+			$newCode .= '<div class="form-actions">'."\n";
+			$newCode .= '<input type="button" class="btn btn-info" value="' . JText::_('PLG_CONTENT_HELLOWORLD_BUTTON_DOWNLOAD_CSV') . '" onclick="PlgContentHelloWorld.ajaxAction(\'downloadCsv\')" />'."\n";
+			$newCode .= '<input type="button" class="btn btn-warning" value="' . JText::_('PLG_CONTENT_HELLOWORLD_BUTTON_ADD_MESSAGE') . '" onclick="PlgContentHelloWorld.ajaxAction(\'addMessage\')" />'."\n";
+			$newCode .= '<input type="button" class="btn btn-warning" value="' . JText::_('PLG_CONTENT_HELLOWORLD_BUTTON_REMOVE_MESSAGE') . '" onclick="PlgContentHelloWorld.ajaxAction(\'removeMessage\')" />'."\n";
+			$newCode .= '<input type="button" class="btn btn-success" value="' . JText::_('PLG_CONTENT_HELLOWORLD_BUTTON_ALERT_MESSAGE') . '" onclick="PlgContentHelloWorld.ajaxAction(\'alertMessage\')" />'."\n";
 			$newCode .= '</div>'."\n";
+			$newCode .= '</div>'."\n";			
 		}
 			
 		// Replace all of the helloworld shortcode with the $newCode block
@@ -105,5 +129,42 @@ class PlgContentHelloWorld extends JPlugin
         $this->app->setBody($body);
 		 */
 	}
+	
+    /**
+	 * com_ajax entry point for PlgContentHelloWorld
+	 * Plugins only have a single entry point for com_ajax
+	 * This method has been modified to allow different sub-methods to be called from the helper class.	
+	 * Normally you only need to use this function without the helper class.
+	 * I have put the other functions in the helper class to keep this file uncluttered.
+	 * use GET or POST for variables or even a mix
+	 * Access this function with: index.php?option=com_ajax&group=content&plugin=helloworld&format=raw&method={SUBMETHOD}
+	 * swap {SUBMETHOD} with the name of your subfunciton i.e. joomlaInstallModifiedAction
+	 * if you dont want to use sub-methods you only need to use: index.php?option=com_ajax&group=content&plugin=helloworld&format=raw
+	 * sub-methods can be called statically if required, just alter the code below accordingly.
+	 *
+	 * @since   1.0.0
+	 */
+    public function onAjaxHelloWorld()
+    {              
+        $app = JFactory::getApplication();        
+        
+        // Get the method parameter (com_ajax does not have native ability to process parameters)
+        $method = $app->input->getString('method').'Action';
+        
+        // Instanciate the Helper Class
+        $helper = new PlgContentHelloWorldHelper();
+                       
+        // Check the specified method exists in the Helper Class
+        if(method_exists($helper, $method))
+        {   
+			// Run the specified method
+            $result = $helper->$method();			
+		} else {			
+            $result = false;
+        }
+		
+		// Return the response to com_ajax
+		return $result;
+    }	
 
 }
